@@ -27,6 +27,8 @@ class ViewController: UIViewController {
             showAlert(message: "PASS가 비었네?")
             return
         }
+        
+        
     }
     
     private func userInfo() -> UserInfo?{
