@@ -10,8 +10,9 @@ class SearchInfoViewController: UIViewController{
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
-    @IBOutlet weak var hiddenPassField: UIStackView!
+
     @IBOutlet weak var hiddenStackView: UIStackView!
+    @IBOutlet weak var hiddenPassTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +20,14 @@ class SearchInfoViewController: UIViewController{
     }
     
     func initView(){
-//        passTextField.layer.borderColor = UIColor.black.cgColor
-//        passTextField.layer.borderWidth = 0.5
-//        passTextField.layer.cornerRadius = 5
+        passTextField.layer.borderColor = UIColor.black.cgColor
+        passTextField.layer.borderWidth = 0.5
+        passTextField.layer.cornerRadius = 5
 
+        hiddenPassTextField.layer.borderColor = UIColor.black.cgColor
+        hiddenPassTextField.layer.borderWidth = 0.5
+        hiddenPassTextField.layer.cornerRadius = 5
+        
         idTextField.layer.borderColor = UIColor.black.cgColor
         idTextField.layer.borderWidth = 0.5
         idTextField.layer.cornerRadius = 5

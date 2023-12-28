@@ -24,6 +24,7 @@ class TodosTableViewController: UITableViewController {
     // MARK: - Methods
     // MARK: Life Cycle
     override func viewDidLoad() {
+        print("[Todos] viewDidLoad")
         super.viewDidLoad()
         
         // UIViewController에서 제공하는 기본 수정버튼
@@ -66,6 +67,21 @@ class TodosTableViewController: UITableViewController {
         cell.detailTextLabel?.text = self.dateFormatter.string(from: todo.due)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        print("tableView >> editingStyleForRowAt")
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == .delete{
+            print("editingStyle > delete >>> \(indexPath.row)")
+            tableView.beginUpdates()
+            todos.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
     }
     
     // MARK: Navigation
