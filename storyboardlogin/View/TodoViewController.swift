@@ -103,6 +103,7 @@ class TodoViewController: UIViewController {
     
     /// 수정 버튼을 눌렀을 때
     @objc private func touchUpEditButton(_ sender: UIBarButtonItem) {
+        print("touchUpEditButton self.mode: \(self.mode) Mode.edit: \(Mode.edit)")
         self.mode = Mode.edit
     }
 

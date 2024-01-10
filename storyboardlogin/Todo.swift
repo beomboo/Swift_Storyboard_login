@@ -60,10 +60,14 @@ extension Todo {
 extension Todo {
     
     @discardableResult static func remove(id: String) -> Bool {
+        print("remove >> id: \(id)")
         
         guard let index: Int = self.all.index(where: { (todo: Todo) -> Bool in
             todo.id == id
         }) else { return false }
+        
+        print("remove >> index: \(index)")
+        
         self.all.remove(at: index)
         return self.saveToJSONFile()
     }
@@ -86,9 +90,13 @@ extension Todo {
     }
     
     private static func index(of target: Todo) -> Int? {
+        print("index")
+        
         guard let index: Int = self.all.index(where: { (todo: Todo) -> Bool in
             todo.id == target.id
         }) else { return nil }
+        
+        print("index >> \(index)")
         
         return index
     }
